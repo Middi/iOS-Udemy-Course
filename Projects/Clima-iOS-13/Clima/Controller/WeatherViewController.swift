@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, /* add delegate */ WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
     
 
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -26,7 +26,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, /* add deleg
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
+}
 
+// MARK: - UITextFieldDelegate
+
+extension WeatherViewController: UITextFieldDelegate {
     
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
@@ -55,7 +59,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, /* add deleg
         }
         searchTextField.text = ""
     }
-    
+}
+
+// MARK: - WeatherManagerDelegate
+
+extension WeatherViewController: WeatherManagerDelegate {
     // create tht didUpdateWeather body to use the delegate
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
@@ -68,7 +76,4 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, /* add deleg
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }
-
