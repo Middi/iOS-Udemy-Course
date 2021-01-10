@@ -1,3 +1,5 @@
 /Assets/*.zip
 
 /**/constants.swift
+/**/Constants.swift
+/**/GoogleService-Info.plist
