@@ -12,6 +12,11 @@ struct ContentView: View {
     @State var leftDiceNumber = 1
     @State var rightDiceNumber = 1
     
+    func roll() {
+        leftDiceNumber = Int.random(in: 1...6)
+        rightDiceNumber = Int.random(in: 1...6)
+    }
+    
     var body: some View {
         ZStack {
             Image("background")
@@ -28,8 +33,7 @@ struct ContentView: View {
                 
                 Spacer()
                 Button(action: {
-                    leftDiceNumber = Int.random(in: 1...6)
-                    rightDiceNumber = Int.random(in: 1...6)
+                   roll()
                 }, label: {
                     Text("Roll")
                         .font(.system(size: 50))
@@ -49,6 +53,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .previewDevice("iPhone 11")
     }
+}
+
+func roll() {
+    ContentView().leftDiceNumber = Int.random(in: 1...6)
+    ContentView().rightDiceNumber = Int.random(in: 1...6)
 }
 
 
