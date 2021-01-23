@@ -17,6 +17,7 @@
 		798A7E9625B2191600975E56 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A7E9525B2191600975E56 /* PostData.swift */; };
 		798A7E9C25B22F8E00975E56 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A7E9B25B22F8E00975E56 /* DetailView.swift */; };
 		798A7E9F25B2341F00975E56 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A7E9E25B2341F00975E56 /* WebView.swift */; };
+		798A7EA725B274C300975E56 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798A7EA625B274C300975E56 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		798A7E9525B2191600975E56 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		798A7E9B25B22F8E00975E56 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		798A7E9E25B2341F00975E56 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		798A7EA125B273F900975E56 /* hackerNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hackerNews.entitlements; sourceTree = "<group>"; };
+		798A7EA625B274C300975E56 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798A7EA725B274C300975E56 /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +54,7 @@
 			children = (
 				798A7E7A25B208AE00975E56 /* hackerNews */,
 				798A7E7925B208AE00975E56 /* Products */,
+				798A7EA525B274C200975E56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +69,7 @@
 		798A7E7A25B208AE00975E56 /* hackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				798A7EA125B273F900975E56 /* hackerNews.entitlements */,
 				798A7E7B25B208AE00975E56 /* AppDelegate.swift */,
 				798A7E7D25B208AE00975E56 /* SceneDelegate.swift */,
 				798A7E9925B22F7700975E56 /* Views */,
@@ -101,6 +107,14 @@
 				798A7E9E25B2341F00975E56 /* WebView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		798A7EA525B274C200975E56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				798A7EA625B274C300975E56 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +332,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hackerNews/hackerNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hackerNews/Preview Content\"";
 				DEVELOPMENT_TEAM = P78VP9JS4J;
@@ -329,6 +345,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.richardmiddleton.hackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -339,6 +356,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hackerNews/hackerNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hackerNews/Preview Content\"";
 				DEVELOPMENT_TEAM = P78VP9JS4J;
@@ -350,6 +369,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.richardmiddleton.hackerNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

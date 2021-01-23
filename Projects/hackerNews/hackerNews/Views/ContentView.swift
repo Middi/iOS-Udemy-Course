@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+extension String {
+  /*
+   Truncates the string to the specified length number of characters and appends an optional trailing string if longer.
+   - Parameter length: Desired maximum lengths of a string
+   - Parameter trailing: A 'String' that will be appended after the truncation.
+    
+   - Returns: 'String' object.
+  */
+  func trunc(length: Int, trailing: String = "…") -> String {
+    return (self.count > length) ? self.prefix(length) + trailing : self
+  }
+}
+
 struct ContentView: View {
     
     @ObservedObject var networkManager = NetworkManager()
@@ -19,8 +32,9 @@ struct ContentView: View {
                     destination: DetailView(url: post.url)) {
                         HStack {
                             Text(String(post.points))
-                            Text(post.title)
+                            Text(post.title.trunc(length: 70))
                         }
+                        .frame(height: 47, alignment: .top)
                     }
             }
             .navigationBarTitle("HackerNews")
